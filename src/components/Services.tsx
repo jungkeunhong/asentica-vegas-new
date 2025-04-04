@@ -82,7 +82,7 @@ const Services = () => {
             ]}
             media={{
               type: 'video',
-              src: '/static/videos/client-matching.mp4'
+              src: '/client-matching.mp4'
             }}
             delay={0.1}
           />
@@ -96,7 +96,7 @@ const Services = () => {
             ]}
             media={{
               type: 'image',
-              src: '/static/images/product.png'
+              src: '/product.png'
             }}
             delay={0.3}
           />
@@ -110,7 +110,7 @@ const Services = () => {
             ]}
             media={{
               type: 'video',
-              src: '/static/videos/atoz.mp4'
+              src: '/atoz.mp4'
             }}
             delay={0.5}
           />

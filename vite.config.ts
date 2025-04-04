@@ -28,7 +28,17 @@ export default defineConfig(({ mode }) => ({
         manualChunks: undefined,
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]'
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name].[hash].[ext]';
+          
+          if (assetInfo.name.match(/\.(mp4|webm|ogg)$/)) {
+            return 'static/videos/[name].[hash].[ext]';
+          }
+          if (assetInfo.name.match(/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/)) {
+            return 'static/images/[name].[hash].[ext]';
+          }
+          return 'assets/[name].[hash].[ext]';
+        }
       }
     },
     modulePreload: {
