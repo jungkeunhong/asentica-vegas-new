@@ -82,7 +82,7 @@ const Services = () => {
             ]}
             media={{
               type: 'video',
-              src: 'static/videos/client-matching.mp4'
+              src: 'static/video/client-matching.mp4'
             }}
             delay={0.1}
           />
