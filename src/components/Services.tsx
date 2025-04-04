@@ -75,7 +75,7 @@ const Services = () => {
               "Clinically proven, dermatologist-endorsed",
               "Delivered within 7–10 days, up to 40% lower than domestic suppliers"
             ]}
-            imageSrc="/asentica-vegas/static/images/product.png"
+            imageSrc="/static/images/product.png"
             delay={0.3}
           />
           
