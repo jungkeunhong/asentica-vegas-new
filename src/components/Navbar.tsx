@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -11,11 +15,15 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
     const section = document.getElementById(sectionId);
+<<<<<<< HEAD
     if (section) {
       setTimeout(() => {
         section.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
+=======
+    section?.scrollIntoView({ behavior: "smooth" });
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
   };
   
   useEffect(() => {

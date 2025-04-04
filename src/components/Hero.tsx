@@ -7,8 +7,12 @@ import heroImage from "../assets/hero-image.jpg"; // This will be imported durin
 import diagram from "../assets/diagram-placeholder.png"; // This will be imported during build
 import { motion } from "framer-motion";
 import { GradientText } from "@/components/ui/gradient-text";
+<<<<<<< HEAD
 // Use the public static directory for the video
 // import videoSrc from "@/assets/0214.mp4";
+=======
+import videoSrc from "../assets/0214.mp4"; // Import the video directly
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
 
 const Hero = () => {
   const { trackCTAClick } = useAnalytics();
@@ -56,9 +60,12 @@ const Hero = () => {
     transform: `translateY(${scrollPosition * 0.2}px)`,
   };
 
+<<<<<<< HEAD
   // Define the video source using the public path
   const videoSrc = "/static/videos/0214.mp4";
 
+=======
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
   return (
     <section aria-labelledby="hero-heading" className="min-h-screen pt-24 flex flex-col justify-center relative overflow-hidden">
       {/* Background with luxury gradient and pattern */}

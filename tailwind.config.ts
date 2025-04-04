@@ -143,8 +143,13 @@ export default {
         sans: ["Inter", "sans-serif"],
       },
       backgroundImage: {
+<<<<<<< HEAD
         'spa-pattern': "url('/assets/spa-pattern.svg')",
         'fluid-shape': "url('/assets/fluid-shape.svg')",
+=======
+        'spa-pattern': "url('/src/assets/spa-pattern.svg')",
+        'fluid-shape': "url('/src/assets/fluid-shape.svg')",
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
       },
     },
   },

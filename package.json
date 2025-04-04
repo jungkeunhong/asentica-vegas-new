@@ -42,7 +42,10 @@
     "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tanstack/react-query": "^5.56.2",
+<<<<<<< HEAD
     "caniuse-lite": "^1.0.30001709",
+=======
+>>>>>>> 00259ba728eba47c62b7b1c6c8688605341a1294
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
