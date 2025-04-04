@@ -1,0 +1,21 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: *
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com; media-src 'self'; object-src 'none'; frame-src 'self' https://www.googletagmanager.com; worker-src 'self' blob:; manifest-src 'self'
+
+/*.js
+  Content-Type: application/javascript
+
+/*.mjs
+  Content-Type: application/javascript
+
+/*.css
+  Content-Type: text/css
+
+/*.js.map
+  Content-Type: application/json

@@ -1,0 +1,154 @@
+
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import { useAnalytics } from "@/hooks/use-analytics";
+import AnimatedSection from "./AnimatedSection";
+import heroImage from "../assets/hero-image.jpg"; // This will be imported during build
+import diagram from "../assets/diagram-placeholder.png"; // This will be imported during build
+
+const Hero = () => {
+  const { trackCTAClick } = useAnalytics();
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove event listener on cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    trackCTAClick("Book a Free Growth Audit", "Hero Section");
+  };
+
+  const handleSecondaryClick = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+    trackCTAClick("Explore Our Services", "Hero Section");
+  };
+
+  // Parallax effect styles
+  const parallaxStyle = {
+    transform: `translateY(${scrollPosition * 0.2}px)`,
+  };
+
+  return (
+    <section aria-labelledby="hero-heading" className="min-h-screen pt-24 flex flex-col justify-center relative overflow-hidden">
+      {/* Background with luxury gradient and pattern */}
+      <div className="absolute inset-0 bg-gradient-to-b from-asentica-brown to-asentica-brown/80 z-0">
+        <div className="absolute inset-0 bg-spa-pattern opacity-10"></div>
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
+          <div className="absolute -right-40 -top-40 w-96 h-96 bg-asentica-gold/10 rounded-full blur-3xl"></div>
+          <div className="absolute right-1/4 top-1/3 w-64 h-64 bg-asentica-beige/10 rounded-full blur-2xl animate-float"></div>
+        </div>
+      </div>
+      
+      {/* Hero content */}
+      <div className="container-custom z-10 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left column - Text */}
+          <div className="text-white">
+            <AnimatedSection>
+              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Unlock Medspa Growth with <span className="text-asentica-gold">AI-Driven</span> Marketing & Trusted Treatments
+              </h1>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2}>
+              <p className="text-lg sm:text-xl opacity-90 mb-8">
+                Asentica helps you attract better clients, boost retention, and stand out with high-performing products and modern marketing strategies.
+              </p>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  className="bg-asentica-gold hover:bg-asentica-gold/90 text-asentica-brown font-medium px-6 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(192,160,128,0.3)] hover:-translate-y-0.5"
+                  onClick={scrollToContact}
+                  aria-label="Book a Free Growth Audit - scroll to contact form"
+                >
+                  Book a Free Growth Audit
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-asentica-gold text-asentica-gold hover:bg-asentica-gold/10 transition-all duration-300"
+                  onClick={handleSecondaryClick}
+                  aria-label="Explore Our Services - scroll to services section"
+                >
+                  Explore Our Services
+                </Button>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.6}>
+              <p className="text-sm text-asentica-beige/70 mt-6">
+                Partnered with top medspas & aesthetic leaders in the U.S. and Korea.
+              </p>
+            </AnimatedSection>
+          </div>
+          
+          {/* Right column - Visual */}
+          <AnimatedSection delay={0.3} className="relative">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              {/* Premium spa image with cinemagraph effect */}
+              <div className="aspect-[4/3] w-full bg-cover bg-center animate-cinemagraph" 
+                   style={{backgroundImage: "url(https://source.unsplash.com/random/800x600/?luxury+skincare+spa)"}}>
+                <div className="absolute inset-0 bg-gradient-to-tr from-asentica-brown/40 to-transparent"></div>
+              </div>
+              
+              {/* Overlay diagram showing the connection */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-asentica-brown to-transparent">
+                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                  <h3 className="text-white text-lg font-medium mb-2">The Asentica Approach</h3>
+                  <div className="flex justify-between items-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-asentica-gold/20 backdrop-blur-sm flex items-center justify-center mx-auto">
+                        <span className="text-asentica-gold">01</span>
+                      </div>
+                      <p className="text-white text-xs mt-1">Clients</p>
+                    </div>
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-transparent via-asentica-gold/50 to-transparent mx-1"></div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-asentica-gold/20 backdrop-blur-sm flex items-center justify-center mx-auto">
+                        <span className="text-asentica-gold">02</span>
+                      </div>
+                      <p className="text-white text-xs mt-1">Medspas</p>
+                    </div>
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-transparent via-asentica-gold/50 to-transparent mx-1"></div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-asentica-gold/20 backdrop-blur-sm flex items-center justify-center mx-auto">
+                        <span className="text-asentica-gold">03</span>
+                      </div>
+                      <p className="text-white text-xs mt-1">Solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </div>
+
+      <AnimatedSection delay={0.8} className="absolute left-0 right-0 bottom-8 text-center z-10">
+        <a 
+          href="#services" 
+          className="inline-block text-white hover:text-asentica-gold transition-colors"
+          aria-label="Scroll down to services section"
+        >
+          <span className="block mb-2 text-sm">Discover More</span>
+          <ArrowDown className="mx-auto animate-bounce" aria-hidden="true" size={24} />
+        </a>
+      </AnimatedSection>
+    </section>
+  );
+};
+
+export default Hero;
