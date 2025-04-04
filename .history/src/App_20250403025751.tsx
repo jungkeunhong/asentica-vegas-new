@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -28,7 +29,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <GoogleTagManager gtmId="GTM-XXXXXXX" />
-        <BrowserRouter>
+        <BrowserRouter basename="/asentica-vegas">
           <PageViewTracker />
           <Routes>
             <Route path="/" element={<Index />} />

@@ -7,6 +7,7 @@ import heroImage from "../assets/hero-image.jpg"; // This will be imported durin
 import diagram from "../assets/diagram-placeholder.png"; // This will be imported during build
 import { motion } from "framer-motion";
 import { GradientText } from "@/components/ui/gradient-text";
+import videoSrc from "../assets/0214.mp4"; // Import the video directly
 
 const Hero = () => {
   const { trackCTAClick } = useAnalytics();
@@ -134,7 +135,7 @@ const Hero = () => {
                     console.error('Video error:', e);
                   }}
                 >
-                  <source src="/videos/0214.mp4" type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-tr from-asentica-brown/30 to-transparent transition-all duration-500"></div>
