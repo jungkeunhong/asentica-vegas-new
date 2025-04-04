@@ -8,23 +8,39 @@ import { GradientText } from "@/components/ui/gradient-text";
 const ServiceCard = ({ 
   title, 
   bulletPoints,
-  imageSrc,
+  media: { type, src },
   delay = 0
 }: { 
   title: string; 
   bulletPoints: string[];
-  imageSrc: string;
+  media: {
+    type: 'image' | 'video';
+    src: string;
+  };
   delay?: number;
 }) => (
   <AnimatedSection delay={delay}>
     <Card className="bg-white border-asentica-beige hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full">
       <div className="aspect-[16/9] w-full overflow-hidden">
-        <div 
-          className="w-full h-full bg-contain bg-no-repeat bg-center transition-transform duration-700 hover:scale-105"
-          style={{ backgroundImage: `url(${imageSrc})` }}
-        >
-          <div className="w-full h-full bg-gradient-to-t from-white/30 to-transparent"></div>
-        </div>
+        {type === 'image' ? (
+          <div 
+            className="w-full h-full bg-contain bg-no-repeat bg-center transition-transform duration-700 hover:scale-105"
+            style={{ backgroundImage: `url(${src})` }}
+          >
+            <div className="w-full h-full bg-gradient-to-t from-white/30 to-transparent"></div>
+          </div>
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          >
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
       <CardHeader className="pb-0">
         <div className="pt-1">
@@ -64,7 +80,10 @@ const Services = () => {
               "Pre-configured messaging and conversion sequences",
               "Optional influencer/content integration for visibility boost"
             ]}
-            imageSrc="https://source.unsplash.com/random/800x600/?data+visualization+dashboard"
+            media={{
+              type: 'video',
+              src: '/static/videos/client-matching.mp4'
+            }}
             delay={0.1}
           />
           
@@ -75,7 +94,10 @@ const Services = () => {
               "Clinically proven, dermatologist-endorsed",
               "Delivered within 7–10 days, up to 40% lower than domestic suppliers"
             ]}
-            imageSrc="/static/images/product.png"
+            media={{
+              type: 'image',
+              src: '/static/images/product.png'
+            }}
             delay={0.3}
           />
           
@@ -86,7 +108,10 @@ const Services = () => {
               "Product usage education, protocols, and legal reviews",
               "HIPAA-safe client intake tools (optional)"
             ]}
-            imageSrc="https://source.unsplash.com/random/800x600/?luxury+consultation"
+            media={{
+              type: 'video',
+              src: '/static/videos/atoz.mp4'
+            }}
             delay={0.5}
           />
         </div>
