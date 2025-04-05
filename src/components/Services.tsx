@@ -47,7 +47,7 @@ const ServiceCard = ({
           <CardTitle className="text-xl text-asentica-brown">{title}</CardTitle>
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-4">
         <ul className="space-y-2">
           {bulletPoints.map((point, index) => (
             <li key={index} className="flex items-start">
@@ -69,7 +69,7 @@ const Services = () => {
       <div className="absolute inset-0 bg-spa-pattern opacity-5"></div>
       <div className="container-custom relative z-10">
         <AnimatedSection className="text-center mb-12">
-          <h2 className="heading-lg mb-4 text-asentica-brown">What Is <GradientText className="font-cormorant tracking-tighter font-light text-5xl">Asentica</GradientText>?</h2>
+          <h2 className="heading-lg mb-4 text-asentica-brown">Introduce <span className="font-cormorant tracking-tighter font-light text-5xl" style={{color: "#EFBF04"}}>Asentica</span></h2>
         </AnimatedSection>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

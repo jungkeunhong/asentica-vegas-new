@@ -60,12 +60,7 @@ const Navbar = () => {
               >
                 Our Approach
               </button>
-              <button 
-                onClick={() => scrollToSection('results')} 
-                className={`${scrolled ? 'text-asentica-brown/90 hover:text-asentica-brown' : 'text-white/90 hover:text-white'} transition-colors`}
-              >
-                About Us
-              </button>
+
               <button 
                 onClick={() => scrollToSection('contact')} 
                 className={`${scrolled ? 'text-asentica-brown/90 hover:text-asentica-brown' : 'text-white/90 hover:text-white'} transition-colors`}
@@ -77,7 +72,7 @@ const Navbar = () => {
               className="bg-asentica-brown text-white hover:bg-asentica-brown/90 px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               onClick={() => scrollToSection('contact')}
             >
-              Get Started
+              Book a Call
             </Button>
           </div>
 
@@ -103,12 +98,7 @@ const Navbar = () => {
               >
                 Our Approach
               </button>
-              <button 
-                className="text-asentica-brown/90 hover:text-asentica-brown transition-colors text-left"
-                onClick={() => scrollToSection('results')}
-              >
-                About Us
-              </button>
+
               <button 
                 className="text-asentica-brown/90 hover:text-asentica-brown transition-colors text-left"
                 onClick={() => scrollToSection('contact')}
@@ -119,7 +109,7 @@ const Navbar = () => {
                 className="bg-asentica-brown text-white hover:bg-asentica-brown/90 w-full"
                 onClick={() => scrollToSection('contact')}
               >
-                Get Started
+                Book a Call
               </Button>
             </div>
           </div>

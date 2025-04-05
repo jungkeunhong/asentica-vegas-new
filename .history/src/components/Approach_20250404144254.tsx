@@ -9,7 +9,7 @@ const Approach = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-asentica-brown to-asentica-brown/0"></div>
       <div className="container-custom relative z-10">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="heading-lg mb-4 text-white">Why <span className="font-cormorant tracking-tighter text-5xl font-light" style={{color: "#EFBF04"}}>Asentica</span> is Different?</h2>
+          <h2 className="heading-lg mb-4 text-white">Why <GradientText className="font-cormorant tracking-tighter text-5xl font-light">Asentica</GradientText> is Different?</h2>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -20,8 +20,8 @@ const Approach = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-asentica-gold/30 to-asentica-beige/20 mx-auto mb-6 shadow-inner">
                   <ChartLine className="h-8 w-8 text-asentica-brown" />
                 </div>
-                <h3 className="text-xl font-semibold text-asentica-brown mb-4">Deliver the Right<br />Clients to Your Door</h3>
-                <p className="text-foreground/80 text-left">
+                <h3 className="text-xl font-semibold text-asentica-brown mb-4">Deliver the Right Clients to Your Door</h3>
+                <p className="text-foreground/80">
                   We help you match with clients who are actively looking for what you offer—based on skincare needs, demographics, and spending behavior.
                 </p>
                 <div className="mt-6 pt-6 border-t border-asentica-beige">
@@ -43,7 +43,7 @@ const Approach = () => {
                   <TrendingUp className="h-8 w-8 text-asentica-brown" />
                 </div>
                 <h3 className="text-xl font-semibold text-asentica-brown mb-4">Retain More Through Smart Engagement</h3>
-                <p className="text-foreground/80 text-left">
+                <p className="text-foreground/80">
                   Our AI tools and client community monitor signals and re-engage clients with personalized offers and post-treatment content.
                 </p>
                 <div className="mt-6 pt-6 border-t border-asentica-beige">
@@ -64,8 +64,8 @@ const Approach = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-asentica-gold/30 to-asentica-beige/20 mx-auto mb-6 shadow-inner">
                   <Monitor className="h-8 w-8 text-asentica-brown" />
                 </div>
-                <h3 className="text-xl font-semibold text-asentica-brown mb-4">Select. We Source.<br />You Scale.</h3>
-                <p className="text-foreground/80 text-left">
+                <h3 className="text-xl font-semibold text-asentica-brown mb-4">Select. We Source. You Scale.</h3>
+                <p className="text-foreground/80">
                   We handle sourcing and validation through our advisor network across Korea and the U.S.   All products meet regulatory standards and are aligned with your positioning.
                 </p>
                 <div className="mt-6 pt-6 border-t border-asentica-beige">

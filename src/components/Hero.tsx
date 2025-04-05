@@ -86,7 +86,7 @@ const Hero = () => {
                         opacity: titleNumber === index ? 1 : 0
                       }}
                     >
-                      <GradientText className="font-semibold">{title}</GradientText>
+                      <span className="font-semibold" style={{color: "#EFBF04"}}>{title}</span>
                     </motion.span>
                   ))}
                 </span>
@@ -103,7 +103,7 @@ const Hero = () => {
             <AnimatedSection delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  className="bg-asentica-gold hover:bg-asentica-gold/90 text-asentica-brown font-medium px-6 py-3 rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(192,160,128,0.3)] hover:-translate-y-0.5"
+                  className="bg-asentica-gold hover:bg-asentica-gold/90 text-asentica-brown font-bold px-8 py-4 text-lg rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(192,160,128,0.3)] hover:-translate-y-0.5 w-full sm:w-auto"
                   onClick={scrollToContact}
                   aria-label="Book a Free Growth Audit - scroll to contact form"
                 >
@@ -164,7 +164,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <AnimatedSection delay={0.8} className="absolute left-0 right-0 bottom-8 text-center z-10">
+      <AnimatedSection delay={0.8} className="relative left-0 right-0 mt-12 text-center z-10 lg:absolute lg:bottom-8 lg:mt-0">
         <a 
           href="#services" 
           className="inline-block text-white hover:text-asentica-gold transition-colors"
