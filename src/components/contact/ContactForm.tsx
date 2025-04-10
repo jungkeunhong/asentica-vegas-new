@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useAnalytics } from "@/hooks/use-analytics";
 import LoadingSpinner from "../LoadingSpinner";
 import { ContactFormFields } from "./ContactFormFields";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -44,9 +45,24 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => 
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form data submitted:", data);
+      // 데이터를 Supabase에 저장
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: data.name,
+            clinic_name: data.clinicName,
+            email: data.email,
+            interests: data.interests || null,
+            message: data.message
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+      
+      console.log("Form data submitted to Supabase:", data);
       
       // Track form submission
       trackFormSubmission("growth-audit");
@@ -63,10 +79,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => 
       // Update parent component
       onSubmitSuccess();
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form to Supabase:", error);
       toast({
         title: "Something went wrong.",
-        description: "Please try again later.",
+        description: "데이터 저장 중 오류가 발생했습니다. 나중에 다시 시도해주세요.",
         variant: "destructive",
       });
     } finally {

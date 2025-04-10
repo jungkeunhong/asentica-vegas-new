@@ -113,6 +113,36 @@ export type Database = {
           username?: string
         }
         Relationships: []
+      },
+      contact_submissions: {
+        Row: {
+          id: string
+          created_at: string
+          name: string
+          clinic_name: string
+          email: string
+          interests: string | null
+          message: string
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          name: string
+          clinic_name: string
+          email: string
+          interests?: string | null
+          message: string
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          name?: string
+          clinic_name?: string
+          email?: string
+          interests?: string | null
+          message?: string
+        }
+        Relationships: []
       }
     }
     Views: {
